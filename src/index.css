@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 60% 18%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 25% 93%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.625rem;
+
+    /* KnowFlow custom tokens */
+    --credibility-high: 152 60% 42%;
+    --credibility-moderate: 38 92% 50%;
+    --credibility-low: 0 72% 51%;
+
+    --surface-elevated: 0 0% 100%;
+    --surface-subtle: 220 20% 97%;
+
+    --hero-gradient-from: 222 60% 18%;
+    --hero-gradient-to: 217 72% 28%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 224 30% 7%;
+    --foreground: 210 40% 96%;
+
+    --card: 224 25% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 224 25% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 210 40% 96%;
+    --primary-foreground: 224 30% 7%;
+
+    --secondary: 224 20% 16%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 224 20% 16%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 20% 18%;
+    --input: 224 20% 18%;
+    --ring: 217 91% 60%;
+
+    --surface-elevated: 224 25% 12%;
+    --surface-subtle: 224 28% 9%;
+
+    --hero-gradient-from: 224 30% 7%;
+    --hero-gradient-to: 217 40% 15%;
+
+    --sidebar-background: 224 30% 7%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 20% 16%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 224 20% 18%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--hero-gradient-from)) 0%,
+      hsl(var(--hero-gradient-to)) 100%
+    );
+  }
+  .gradient-hero-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent)) 0%,
+      hsl(217 80% 72%) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .shadow-elevated {
+    box-shadow: 0 1px 3px 0 hsl(var(--foreground) / 0.04),
+                0 4px 12px 0 hsl(var(--foreground) / 0.06);
+  }
+  .shadow-card-hover {
+    box-shadow: 0 2px 8px 0 hsl(var(--foreground) / 0.06),
+                0 8px 24px 0 hsl(var(--foreground) / 0.1);
+  }
+}
